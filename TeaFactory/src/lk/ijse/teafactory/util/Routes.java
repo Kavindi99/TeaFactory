@@ -1,0 +1,6 @@
+package lk.ijse.teafactory.util;
+
+public enum Routes {
+    LOGIN , ADMIN_DASHBOARD , OWNER_DASHBOARD , ADMIN_STOCK , CUSTOMER , EMPLOYEE , INCOME_REPORT , OWNER_STOCK , ORDER , SUPPLIER , PRODUCT
+
+}

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #95D5B2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.teafactory.controller.AdminDashboardFormController">
+   <children>
+      <Pane layoutX="116.0" layoutY="59.0" prefHeight="650.0" prefWidth="1134.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="535.0" layoutX="5.0" layoutY="90.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="150.0" strokeType="INSIDE" strokeWidth="0.0" width="195.0">
+               <effect>
+                  <Glow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#006e47" />
+                        <Stop color="#006e47" offset="0.007662835249042145" />
+                        <Stop color="#64d3a9" offset="0.9961685823754789" />
+                        <Stop color="#64d3a9" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <ImageView fitHeight="70.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0">
+               <image>
+                  <Image url="@../assets/LogoG.png" />
+               </image>
+            </ImageView>
+            <Line endX="-118.0" endY="376.0" layoutX="322.0" layoutY="252.0" startX="-118.0" startY="-155.0" />
+            <JFXButton fx:id="btnSuppliers" buttonType="RAISED" layoutX="23.0" layoutY="278.0" onAction="#btnSuppliersOnAction" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1F5F5B;" text="Suppliers " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnProducts" buttonType="RAISED" layoutX="23.0" layoutY="345.0" onAction="#btnProductsOnAction" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1F5F5B;" text="Products " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnCustomers" buttonType="RAISED" layoutX="23.0" layoutY="410.0" onAction="#btnCustomersOnAction" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1F5F5B;" text="Customers" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnOrders" buttonType="RAISED" layoutX="23.0" layoutY="473.0" onAction="#btnOrdersOnAction" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1F5F5B;" text="Orders" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnStocks" buttonType="RAISED" layoutX="23.0" layoutY="540.0" onAction="#btnStocksOnAction" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1F5F5B;" text="Stocks " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <Label layoutX="241.0" layoutY="31.0" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="23.0" layoutY="223.0" onAction="#btnLoginOnAction" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1F5F5B;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="76.0" fitWidth="72.0" layoutX="57.0" layoutY="106.0">
+               <image>
+                  <Image url="@../assets/Admin.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="71.0" layoutY="184.0" text="Admin">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="MEDIUMORCHID" height="70.0" layoutX="225.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="245.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="70.0" layoutX="225.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#49b265" height="70.0" layoutX="542.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="245.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#159947" height="70.0" layoutX="542.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dd514c" height="70.0" layoutX="843.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="245.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d62424" height="70.0" layoutX="843.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fd8839" height="70.0" layoutX="229.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="245.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f32d17" height="70.0" layoutX="230.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fd6785" height="70.0" layoutX="542.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="245.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#df4e85" height="70.0" layoutX="543.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
+            <JFXButton fx:id="btnCustomer" layoutX="241.0" layoutY="560.0" onAction="#btnCustomerOnAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #99d31b;" text="Customer Report">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <ProgressIndicator layoutX="234.0" layoutY="317.0" opacity="0.87" prefHeight="187.0" prefWidth="262.0" progress="0.85" style="-fx-background-color: #00704a;" />
+            <Label layoutX="306.0" layoutY="112.0" prefHeight="30.0" prefWidth="118.0" text="Customers ">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="623.0" layoutY="112.0" prefHeight="30.0" prefWidth="118.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="923.0" layoutY="112.0" prefHeight="30.0" prefWidth="118.0" text="Orders">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="306.0" layoutY="212.0" prefHeight="30.0" prefWidth="118.0" text="Stock">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="623.0" layoutY="212.0" prefHeight="30.0" prefWidth="118.0" text="Suppliers">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="268.0" layoutY="513.0" text="Business Progress " textFill="#092c45">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ProgressBar layoutX="302.0" layoutY="144.0" prefHeight="18.0" prefWidth="162.0" progress="0.8" />
+            <ProgressBar layoutX="623.0" layoutY="144.0" prefHeight="18.0" prefWidth="156.0" progress="0.79" />
+            <ProgressBar layoutX="923.0" layoutY="144.0" prefHeight="18.0" prefWidth="156.0" progress="0.79" />
+            <ProgressBar layoutX="306.0" layoutY="243.0" prefHeight="18.0" prefWidth="156.0" progress="0.79" />
+            <ProgressBar layoutX="623.0" layoutY="243.0" prefHeight="18.0" prefWidth="156.0" progress="0.63" />
+            <JFXButton fx:id="btnOrder" layoutX="542.0" layoutY="560.0" onAction="#btnOrderOnAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #99d31b;" text="Order Report">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnProduct" layoutX="830.0" layoutY="560.0" onAction="#btnProductOnAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #99d31b;" text="Product Report">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
