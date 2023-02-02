@@ -20,7 +20,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return CrudUtil.execute("INSERT INTO Employee VALUES (?, ?, ?)",entity.getEmployeeId(),entity.getEmployeeName(),entity.getEmployeeAddress(),entity.getJobRole());
 
     }
-
+ // add comment 
     @Override
     public ArrayList<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<EmployeeDTO> allEmployees = new ArrayList();
