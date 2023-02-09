@@ -2,8 +2,7 @@ package lk.ijse.teafactory.dao.custom.impl;
 
 import lk.ijse.teafactory.dao.CrudUtil;
 import lk.ijse.teafactory.dao.custom.EmployeeDAO;
-import lk.ijse.teafactory.entity.CustomerDTO;
-import lk.ijse.teafactory.entity.EmployeeDTO;
+import lk.ijse.teafactory.model.EmployeeDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,10 +16,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public boolean save(EmployeeDTO entity) throws SQLException, ClassNotFoundException {
         System.out.println(entity.getEmployeeId()+" "+entity.getEmployeeName()+" "+entity.getEmployeeAddress()+""+entity.getJobRole());
-        return CrudUtil.execute("INSERT INTO Employee VALUES (?, ?, ?)",entity.getEmployeeId(),entity.getEmployeeName(),entity.getEmployeeAddress(),entity.getJobRole());
+        return CrudUtil.execute("INSERT INTO Employee VALUES (?, ?, ?,?)",entity.getEmployeeId(),entity.getEmployeeName(),entity.getEmployeeAddress(),entity.getJobRole());
 
     }
- // add comment 
+ // add comment
     @Override
     public ArrayList<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<EmployeeDTO> allEmployees = new ArrayList();

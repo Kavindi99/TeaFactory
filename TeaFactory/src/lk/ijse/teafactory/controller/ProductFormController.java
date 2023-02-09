@@ -12,12 +12,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.teafactory.model.CustomerModel;
-import lk.ijse.teafactory.model.ProductModel;
-import lk.ijse.teafactory.model.SupplierModel;
-import lk.ijse.teafactory.to.Customer;
-import lk.ijse.teafactory.to.Product;
-import lk.ijse.teafactory.to.Supplier;
+import lk.ijse.teafactory.modelold.ProductModel;
+import lk.ijse.teafactory.tdm.Product;
 import lk.ijse.teafactory.util.Navigation;
 import lk.ijse.teafactory.util.Routes;
 

@@ -3,7 +3,7 @@ package lk.ijse.teafactory.bo.custom.impl;
 import lk.ijse.teafactory.bo.custom.CustomerBO;
 import lk.ijse.teafactory.dao.DAOFactory;
 import lk.ijse.teafactory.dao.custom.CustomerDAO;
-import lk.ijse.teafactory.entity.CustomerDTO;
+import lk.ijse.teafactory.model.CustomerDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

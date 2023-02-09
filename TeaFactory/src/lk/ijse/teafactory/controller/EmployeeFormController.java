@@ -12,10 +12,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.teafactory.model.CustomerModel;
-import lk.ijse.teafactory.model.EmployeeModel;
-import lk.ijse.teafactory.to.Customer;
-import lk.ijse.teafactory.to.Employee;
+import lk.ijse.teafactory.dao.custom.EmployeeDAO;
+import lk.ijse.teafactory.dao.custom.impl.EmployeeDAOImpl;
+import lk.ijse.teafactory.model.EmployeeDTO;
+import lk.ijse.teafactory.modelold.EmployeeModel;
+import lk.ijse.teafactory.tdm.Employee;
 import lk.ijse.teafactory.util.Navigation;
 import lk.ijse.teafactory.util.Routes;
 
@@ -70,9 +71,11 @@ public class EmployeeFormController implements Initializable {
     public void txtEmployeeIdOnAction(ActionEvent actionEvent) {
         String employeeId = txtEmployeeId.getText();
         try {
-            Employee employee = EmployeeModel.search(employeeId);
-            if (employee != null){
-                fillData(employee);
+       //    Employee employee = EmployeeModel.search(employeeId);
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+            EmployeeDTO search = employeeDAO.search(employeeId);
+            if (search != null){
+                fillData(search);
             }
         }catch (SQLException | ClassNotFoundException e){
             throw new RuntimeException(e);
@@ -85,9 +88,11 @@ public class EmployeeFormController implements Initializable {
         String employeeAddress = txtEmployeeAddress.getText();
         String jobRole = txtJobRole.getText();
 
-        Employee employee = new Employee(employeeId,employeeName,employeeAddress,jobRole);
+   //     Employee employee = new Employee(employeeId,employeeName,employeeAddress,jobRole);
         try {
-            boolean isAdded = EmployeeModel.save(employee);
+          //  boolean isAdded = EmployeeModel.save(employee);
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+            boolean isAdded = employeeDAO.save(new EmployeeDTO(employeeId,employeeName,employeeAddress,jobRole));
 
             if (isAdded) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee Added!").show();
@@ -98,18 +103,22 @@ public class EmployeeFormController implements Initializable {
             throw new RuntimeException(e);
         }
 
-        ObservableList<Employee> employees = tblEmployee.getItems();
+      /*  ObservableList<Employee> employees = tblEmployee.getItems();
         employees.add(employee);
-        tblEmployee.setItems(employees);
+        tblEmployee.setItems(employees);*/
     }
 
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
         String employeeId = txtEmployeeId.getText();
         try {
-            Employee employee = EmployeeModel.search(employeeId);
-            if (employee != null){
-                fillData(employee);
+        //    Employee employee = EmployeeModel.search(employeeId);
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+            EmployeeDTO search  = employeeDAO.search(employeeId);
+
+
+            if (search != null){
+                fillData(search);
             }
         }catch (SQLException | ClassNotFoundException e){
             throw new RuntimeException(e);
@@ -119,17 +128,21 @@ public class EmployeeFormController implements Initializable {
 
     public void btnSearchEmployeeOnAction(ActionEvent actionEvent) {
         String employeeId = txtSearch.getText();
+        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+
         try{
-            Employee employee = EmployeeModel.search(employeeId);
-            if (employee != null){
-                fillData(employee);
+           // Employee employee = EmployeeModel.search(employeeId);
+            EmployeeDTO search  = employeeDAO.search(employeeId);
+
+            if (search != null){
+                fillData(search);
             }
         }catch (SQLException | ClassNotFoundException e){
             throw new RuntimeException(e);
         }
     }
 
-    private void fillData(Employee employee) {
+    private void fillData(EmployeeDTO employee) {
         txtEmployeeId.setText(employee.getEmployeeId());
         txtEmployeeName.setText(employee.getEmployeeName());
         txtEmployeeAddress.setText(employee.getEmployeeAddress());
@@ -153,8 +166,11 @@ public class EmployeeFormController implements Initializable {
 
 
         try{
-            Employee employee = new Employee(employeeId,employeeName,employeeAddress,jobRole);
-            boolean isUpdated = EmployeeModel.update(employee, employeeId);
+           /* Employee employee = new Employee(employeeId,employeeName,employeeAddress,jobRole);
+            boolean isUpdated = EmployeeModel.update(employee, employeeId);*/
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+            boolean isUpdated = employeeDAO.update(new EmployeeDTO(employeeId, employeeName, employeeAddress,jobRole));
+
             if (isUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee Updated Successfully!").show();
             }else {
@@ -224,8 +240,11 @@ public class EmployeeFormController implements Initializable {
         String jobRole = txtJobRole.getText();
 
         try{
-            Employee employee = new Employee(employeeId,employeeName,employeeAddress,jobRole);
-            boolean isDeleted = EmployeeModel.delete(employee, employeeId);
+           /* Employee employee = new Employee(employeeId,employeeName,employeeAddress,jobRole);
+            boolean isDeleted = EmployeeModel.delete(employee, employeeId);*/
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+            boolean isDeleted = employeeDAO.delete(employeeId);
+
             if (isDeleted){
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee Deleted Successfully!").show();
             }else {

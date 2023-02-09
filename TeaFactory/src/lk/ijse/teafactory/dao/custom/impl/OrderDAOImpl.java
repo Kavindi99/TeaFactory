@@ -1,7 +1,7 @@
 package lk.ijse.teafactory.dao.custom.impl;
 
 import lk.ijse.teafactory.dao.CrudUtil;
-import lk.ijse.teafactory.entity.OrderDTO;
+import lk.ijse.teafactory.model.OrderDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -12,14 +12,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.teafactory.model.AdminStockModel;
-import lk.ijse.teafactory.model.OwnerStockModel;
-import lk.ijse.teafactory.to.AdminStock;
-import lk.ijse.teafactory.to.OwnerStock;
+import lk.ijse.teafactory.modelold.OwnerStockModel;
+import lk.ijse.teafactory.tdm.OwnerStock;
 import lk.ijse.teafactory.util.Navigation;
 import lk.ijse.teafactory.util.Routes;
 
-import javax.jws.Oneway;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

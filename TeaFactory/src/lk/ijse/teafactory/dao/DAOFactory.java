@@ -1,6 +1,7 @@
 package lk.ijse.teafactory.dao;
 
 import lk.ijse.teafactory.dao.custom.impl.CustomerDAOImpl;
+import lk.ijse.teafactory.dao.custom.impl.ProductDAOImpl;
 
 /**
  * author - kavindi
@@ -17,15 +18,15 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        CUSTOMER,ITEM,ORDER,ORDER_DETAILS,QUERY_DAO
+        CUSTOMER,PRODUCT,ORDER,ORDER_DETAILS,QUERY_DAO
     }
 
     public SuperDAO getDAO(DAOTypes types){
         switch (types) {
             case CUSTOMER:
                 return new CustomerDAOImpl();
-          /*  case ITEM:
-                return new ItemDAOImpl();
+         /*  case PRODUCT:
+                return new ProductDAOImpl();
             case ORDER:
                 return new OrderDAOImpl();
             case ORDER_DETAILS:

@@ -14,9 +14,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.teafactory.dao.custom.CustomerDAO;
 import lk.ijse.teafactory.dao.custom.impl.CustomerDAOImpl;
-import lk.ijse.teafactory.entity.CustomerDTO;
-import lk.ijse.teafactory.model.CustomerModel;
-import lk.ijse.teafactory.to.Customer;
+import lk.ijse.teafactory.model.CustomerDTO;
+import lk.ijse.teafactory.modelold.CustomerModel;
+import lk.ijse.teafactory.tdm.Customer;
 import lk.ijse.teafactory.util.Navigation;
 import lk.ijse.teafactory.util.Routes;
 
@@ -25,8 +25,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * author - kavindi

@@ -1,7 +1,7 @@
 package lk.ijse.teafactory.dao.custom.impl;
 
 import lk.ijse.teafactory.dao.custom.OwnerStockDAO;
-import lk.ijse.teafactory.entity.StockDTO;
+import lk.ijse.teafactory.model.StockDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

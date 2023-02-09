@@ -2,7 +2,7 @@ package lk.ijse.teafactory.dao.custom.impl;
 
 import lk.ijse.teafactory.dao.CrudUtil;
 import lk.ijse.teafactory.dao.custom.CustomerDAO;
-import lk.ijse.teafactory.entity.CustomerDTO;
+import lk.ijse.teafactory.model.CustomerDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

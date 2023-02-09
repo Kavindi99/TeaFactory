@@ -1,0 +1,36 @@
+.my-btn{
+    -fx-background-color: #1B78EB;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+
+.top_pane_background_color{
+    -fx-background-color: linear-gradient(to right bottom ,#49B265,#159947);
+
+}
+
+.save_button{
+    -fx-background-color:#00AD6F;
+}
+
+.delete_button{
+    -fx-background-color:#B10101;
+}
+
+.update_button{
+    -fx-background-color:#3137AE;
+}
+
+.clear_button{
+    -fx-background-color:#F3442A;
+}
+
+.search_button{
+    -fx-background-color:#756F61;
+}
+
+.dashboard_button:hover{
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
