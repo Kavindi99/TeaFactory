@@ -2,6 +2,7 @@ package lk.ijse.teafactory.dao.custom.impl;
 
 import lk.ijse.teafactory.dao.custom.OrderDetailDAO;
 import lk.ijse.teafactory.model.OrderdetailDTO;
+import lk.ijse.teafactory.tdm.CartDetail;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -35,4 +36,6 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return false;
     }
+
+
 }

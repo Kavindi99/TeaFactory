@@ -3,6 +3,7 @@ package lk.ijse.teafactory.bo.custom.impl;
 import lk.ijse.teafactory.bo.custom.CustomerBO;
 import lk.ijse.teafactory.dao.DAOFactory;
 import lk.ijse.teafactory.dao.custom.CustomerDAO;
+import lk.ijse.teafactory.dao.custom.EmployeeDAO;
 import lk.ijse.teafactory.model.CustomerDTO;
 
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  * version - 1.0.0 11:37 AM 1/29/2023
  **/
 public class CustomerBOImpl implements CustomerBO {
-     CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+     CustomerDAO  customerDAO= (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
 
 
      @Override

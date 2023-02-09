@@ -4,17 +4,17 @@ package lk.ijse.teafactory.model;
  * author - kavindi
  * version - 1.0.0 10:30 AM 1/29/2023
  **/
-public class SupplierOrderDetail {
+public class SupplierOrderDetailDTO {
    private double sellingPrice;
    private int qautity;
    private String sellingOrderId;
    private String stockId;
    private String billPaymentId;
 
-    public SupplierOrderDetail() {
+    public SupplierOrderDetailDTO() {
     }
 
-    public SupplierOrderDetail(double sellingPrice, int qautity, String sellingOrderId, String stockId, String billPaymentId) {
+    public SupplierOrderDetailDTO(double sellingPrice, int qautity, String sellingOrderId, String stockId, String billPaymentId) {
         this.sellingPrice = sellingPrice;
         this.qautity = qautity;
         this.sellingOrderId = sellingOrderId;

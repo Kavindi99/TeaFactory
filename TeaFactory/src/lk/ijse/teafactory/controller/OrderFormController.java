@@ -10,6 +10,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.teafactory.dao.DAOFactory;
+import lk.ijse.teafactory.dao.custom.QueryDAO;
+import lk.ijse.teafactory.dao.custom.impl.QueryDAOImpl;
 import lk.ijse.teafactory.modelold.CustomerModel;
 import lk.ijse.teafactory.modelold.OrderModel;
 import lk.ijse.teafactory.modelold.PlaceOrderModel;
@@ -109,6 +112,10 @@ public class OrderFormController implements Initializable {
 
 
     public void btnAddtoCartOnAction(ActionEvent actionEvent) {
+
+        QueryDAO queryDAO = (QueryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.QUERY_DAO);
+
+
         String productCode = String.valueOf(cmbProductCode.getValue());
         int qty = Integer.parseInt(txtQty.getText());
         String desc = lblDescription1.getText();
@@ -156,6 +163,7 @@ public class OrderFormController implements Initializable {
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+
         String orderId = lblOrderId1.getText();
         String customerId = String.valueOf(cmbCustomerId.getValue());
 
@@ -168,9 +176,10 @@ public class OrderFormController implements Initializable {
             cartDetails.add(new CartDetail(orderId, tm.getProductCode(), tm.getQty(), tm.getDescription(), tm.getUnitPrice()));
         }
 
-        PlaceOrder placeOrder = new PlaceOrder(customerId, orderId, cartDetails);
+      //  PlaceOrder placeOrder = new PlaceOrder(customerId, orderId, cartDetails);
         try {
-            boolean isPlaced = PlaceOrderModel.placeOrder(placeOrder);
+
+            boolean isPlaced = queryBO.placeOrder(customerId, orderId, CartDetail.);
             if (isPlaced) {
                 /* to clear table */
                 obList.clear();

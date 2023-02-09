@@ -4,6 +4,7 @@ import lk.ijse.teafactory.dao.CrudUtil;
 import lk.ijse.teafactory.dao.custom.ProductDAO;
 import lk.ijse.teafactory.model.CustomerDTO;
 import lk.ijse.teafactory.model.ProductDTO;
+import lk.ijse.teafactory.tdm.CartDetail;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,4 +50,6 @@ public class ProductDAOImpl implements ProductDAO {
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("DELETE FROM Product  WHERE productCode = ?",id);
     }
+
+
 }

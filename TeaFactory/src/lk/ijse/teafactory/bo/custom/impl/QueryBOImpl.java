@@ -1,37 +1,43 @@
-package lk.ijse.teafactory.dao.custom.impl;
+package lk.ijse.teafactory.bo.custom.impl;
 
-
+import lk.ijse.teafactory.bo.custom.QueryBO;
 import lk.ijse.teafactory.dao.custom.OrderDAO;
 import lk.ijse.teafactory.dao.custom.OrderDetailDAO;
 import lk.ijse.teafactory.dao.custom.ProductDAO;
 import lk.ijse.teafactory.dao.custom.QueryDAO;
+import lk.ijse.teafactory.dao.custom.impl.OrderDAOImpl;
+import lk.ijse.teafactory.dao.custom.impl.OrderDetailDAOImpl;
+import lk.ijse.teafactory.dao.custom.impl.ProductDAOImpl;
+import lk.ijse.teafactory.dao.custom.impl.QueryDAOImpl;
 import lk.ijse.teafactory.db.DBConnection;
+import lk.ijse.teafactory.model.OrderDTO;
+import lk.ijse.teafactory.model.OrderdetailDTO;
+import lk.ijse.teafactory.model.PlaceOrderDTO;
+import lk.ijse.teafactory.model.ProductDTO;
+import lk.ijse.teafactory.tdm.CartDetail;
+import lk.ijse.teafactory.tdm.PlaceOrder;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import lk.ijse.teafactory.model.OrderDTO;
-import lk.ijse.teafactory.model.OrderdetailDTO;
-import lk.ijse.teafactory.model.PlaceOrderDTO;
-import lk.ijse.teafactory.model.ProductDTO;
-import lk.ijse.teafactory.modelold.OrderDetailModel;
-import lk.ijse.teafactory.modelold.OrderModel;
-import lk.ijse.teafactory.modelold.ProductModel;
-import lk.ijse.teafactory.tdm.CartDetail;
-import lk.ijse.teafactory.tdm.Order;
-import lk.ijse.teafactory.tdm.PlaceOrder;
-import lk.ijse.teafactory.tdm.Product;
-
 /**
  * author - kavindi
- * version - 1.0.0 10:32 PM 2/7/2023
+ * version - 1.0.0 11:25 PM 2/8/2023
  **/
-public class QueryDAOImpl implements QueryDAO {
+public class QueryBOImpl implements QueryBO {
+
+    QueryDAO queryDAO = new QueryDAOImpl();
+
+   /* public boolean placeOrder(PlaceOrderDTO placeOrderDTO) throws SQLException, ClassNotFoundException {
+
+        return queryDAO.;
+
+    }*/
 
     public  boolean placeOrder(PlaceOrderDTO placeOrderDTO) throws SQLException, ClassNotFoundException {
-       ProductDAO productDAO = new ProductDAOImpl();
-       OrderDetailDAO orderDetailDAO = new OrderDetailDAOImpl();
+        ProductDAO productDAO = new ProductDAOImpl();
+        OrderDetailDAO orderDetailDAO = new OrderDetailDAOImpl();
         try {
             DBConnection.getInstance().getConnection().setAutoCommit(false);
             OrderDAO orderDAO = new OrderDAOImpl();
@@ -57,7 +63,7 @@ public class QueryDAOImpl implements QueryDAO {
     }
 
     public  boolean updateQty(ArrayList<CartDetail> cartDetails) throws SQLException, ClassNotFoundException {
-       ProductDAO productDAO = new ProductDAOImpl();
+        ProductDAO productDAO = new ProductDAOImpl();
 
         for (CartDetail cartDetail : cartDetails) {
             if (productDAO.update(new ProductDTO(cartDetail.getProductCode(),cartDetail.getDescription(),cartDetail.getUnitPrice(),cartDetail.getQty()))) {
@@ -67,7 +73,7 @@ public class QueryDAOImpl implements QueryDAO {
         return true;
     }
 
-    public boolean saveOrderDetails(ArrayList<CartDetail> cartDetails) throws SQLException, ClassNotFoundException {
+    public  boolean saveOrderDetails(ArrayList<CartDetail> cartDetails) throws SQLException, ClassNotFoundException {
         OrderDetailDAO orderDetailDAO = new OrderDetailDAOImpl();
 
         for (CartDetail cartDetail : cartDetails) {
@@ -77,4 +83,5 @@ public class QueryDAOImpl implements QueryDAO {
         }
         return true;
     }
+
 }

@@ -12,7 +12,7 @@ import java.time.LocalDate;
  * version - 1.0.0 11:42 PM 11/29/2022
  **/
 public class PlaceOrderModel {
-    /*public static boolean placeOrder(PlaceOrder placeOrder) throws SQLException, ClassNotFoundException {
+    public static boolean placeOrder(PlaceOrder placeOrder) throws SQLException, ClassNotFoundException {
         try {
             DBConnection.getInstance().getConnection().setAutoCommit(false);
             boolean isOrderAdded = OrderModel.save(new Order(placeOrder.getOrderId(), LocalDate.now(), placeOrder.getCustomerId()));
@@ -31,6 +31,6 @@ public class PlaceOrderModel {
         } finally {
             DBConnection.getInstance().getConnection().setAutoCommit(true);
         }
-    }*/
+    }
 
 }

@@ -10,7 +10,7 @@ public class SupplierDTO {
     private String description;
     private int qauntity;
 
-    public SupplierDTO() {
+    public SupplierDTO(String string, String rstString, String s) {
     }
 
     public SupplierDTO(String supplierId, String supplierName, String description, int qauntity) {

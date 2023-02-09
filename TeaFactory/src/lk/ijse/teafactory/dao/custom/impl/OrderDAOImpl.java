@@ -1,6 +1,7 @@
 package lk.ijse.teafactory.dao.custom.impl;
 
 import lk.ijse.teafactory.dao.CrudUtil;
+import lk.ijse.teafactory.dao.custom.OrderDAO;
 import lk.ijse.teafactory.model.OrderDTO;
 
 import java.sql.ResultSet;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * author - kavindi
  * version - 1.0.0 11:41 AM 1/29/2023
  **/
-public class OrderDAOImpl{
+public class OrderDAOImpl implements OrderDAO {
 
     public boolean save(OrderDTO entity) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("INSERT INTO Order VALUES (?, ?, ?)",entity.getOrderId(),entity.getOrderDate(),entity.getCustomerId());
